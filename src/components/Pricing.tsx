@@ -1,0 +1,95 @@
+import { motion } from "motion/react";
+import { Check } from "lucide-react";
+
+const plans = [
+  {
+    name: "Growth",
+    price: "$2,999",
+    tagline: "For scaling creators",
+    features: ["15 Short-form Edits", "Viral Strategy Hook", "72h Turnaround", "2 Rounds of Revisions"],
+    popular: false,
+  },
+  {
+    name: "Elite",
+    price: "$5,999",
+    tagline: "Our most popular engine",
+    features: [
+      "Unlimited Short-form Edits", 
+      "2 Long-form (YouTube) Edits", 
+      "Custom Motion Graphics",
+      "24h Turnaround Priority", 
+      "Unlimited Revisions",
+      "Dedicated Asset Manager"
+    ],
+    popular: true,
+  },
+  {
+    name: "Legacy",
+    price: "Custom",
+    tagline: "Full-scale brand takeover",
+    features: ["Agency White Label", "Full YouTube Channel Mgmt", "On-site Directing", "Full Narrative Overhaul"],
+    popular: false,
+  },
+];
+
+export default function Pricing() {
+  return (
+    <section id="pricing" className="py-32 relative">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="text-center mb-24">
+          <h2 className="text-5xl md:text-7xl font-display font-medium mb-6 italic">INVESTMENT</h2>
+          <p className="text-white/40 max-w-xl mx-auto">
+            Choose the membership tier that fits your growth trajectory. 
+            All plans are subscription-based with no long-term contracts.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+          {plans.map((plan, index) => (
+            <motion.div
+              key={plan.name}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className={`relative p-12 rounded-[40px] flex flex-col ${
+                plan.popular ? "bg-brand-blue text-white scale-105 z-10" : "surface-card text-white"
+              }`}
+            >
+              {plan.popular && (
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-white text-brand-blue px-6 py-1 rounded-full text-[10px] font-black uppercase tracking-widest">
+                  Most Popular
+                </div>
+              )}
+              
+              <div className="mb-8">
+                <h3 className="text-3xl font-display font-medium mb-2">{plan.name}</h3>
+                <p className={`text-sm ${plan.popular ? "text-white/80" : "text-brand-text-dim"}`}>{plan.tagline}</p>
+              </div>
+
+              <div className="mb-12">
+                <span className="text-5xl font-display font-bold tracking-tighter">{plan.price}</span>
+                {plan.price !== "Custom" && <span className="opacity-50 text-xl ml-1">/mo</span>}
+              </div>
+
+              <div className="flex flex-col gap-5 mb-12 flex-grow">
+                {plan.features.map((f) => (
+                  <div key={f} className="flex items-center gap-3 text-sm">
+                    <Check size={18} className={plan.popular ? "text-white" : "text-brand-blue"} />
+                    <span className={plan.popular ? "font-medium" : "text-brand-text-dim"}>{f}</span>
+                  </div>
+                ))}
+              </div>
+
+              <a href="#booking" className={`w-full py-5 rounded-full font-black text-xs uppercase tracking-widest transition-all cursor-pointer text-center ${
+                plan.popular ? "bg-white text-brand-blue hover:bg-black hover:text-white" : "bg-brand-blue text-white hover:bg-white hover:text-brand-blue"
+              }`}>
+                Become a Member
+              </a>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
