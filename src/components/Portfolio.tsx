@@ -5,80 +5,102 @@ const works = [
   { 
     title: "Ads Creative", 
     tag: "High Ticket", 
-    img: "https://drive.google.com/file/d/124ovNksRABW8WLwNwQCD1M7IqkSkZEau/view?usp=drive_link",
-    link: "#https://f.io/t157Zd6l"
+    video: "https://cdn.pixabay.com/video/2023/11/05/187901-881515250_tiny.mp4",
+    link: "https://f.io/t157Zd6l"
   },
   { 
     title: "Documentary Style", 
     tag: "Narrative", 
-    img: "https://picsum.photos/seed/edit2/800/1000",
+    video: "https://cdn.pixabay.com/video/2021/09/14/88562-605809707_tiny.mp4",
     link: "#"
   },
   { 
     title: "Short-Form Loop", 
     tag: "Viral", 
-    img: "https://picsum.photos/seed/edit3/800/1000",
+    video: "https://cdn.pixabay.com/video/2024/01/24/197940-906060136_tiny.mp4",
     link: "#"
   },
   { 
     title: "Motion VFX Showcase", 
     tag: "3D Motion", 
-    img: "https://picsum.photos/seed/edit4/800/1000",
+    video: "https://cdn.pixabay.com/video/2021/04/14/71120-538183186_tiny.mp4",
     link: "#"
   },
 ];
 
 export default function Portfolio() {
-  return (
-    <section id="portfolio" className="py-32 bg-brand-deep/20">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-24">
-          <h2 className="text-5xl md:text-7xl font-display font-medium mb-6">SELECTED WORKS</h2>
-          <p className="text-white/40 max-w-xl mx-auto">
-            A small glimpse into the high-performance edits we deliver to our exclusive roster of clients.
-          </p>
-        </div>
+  // Duplicate works to create a seamless infinite loop
+  const duplicatedWorks = [...works, ...works, ...works];
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {works.map((work, index) => (
-            <motion.div
-              key={work.title}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="group relative h-[450px] rounded-3xl overflow-hidden cursor-pointer"
+  return (
+    <section id="portfolio" className="py-24 md:py-32 bg-brand-deep/20 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 mb-16 md:mb-24 text-center">
+        <h2 className="text-4xl md:text-7xl font-display font-medium mb-6">SELECTED WORKS</h2>
+        <p className="text-white/40 max-w-xl mx-auto text-sm md:text-base">
+          Our high-performance edits aren't just seen—they're felt. Watch our latest engine executions in real-time.
+        </p>
+      </div>
+
+      <div className="relative flex overflow-hidden">
+        {/* Gradients on edges to fade the items */}
+        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#030303] to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#030303] to-transparent z-10 pointer-events-none" />
+
+        <motion.div
+          animate={{
+            x: [0, -1800], // Adjust based on content width
+          }}
+          transition={{
+            x: {
+              duration: 40, // Slower pace for video visibility
+              repeat: Infinity,
+              ease: "linear",
+            },
+          }}
+          className="flex gap-6 whitespace-nowrap py-4 pr-6"
+        >
+          {duplicatedWorks.map((work, index) => (
+            <motion.a
+              href={work.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              key={`${work.title}-${index}`}
+              whileHover={{ scale: 1.02 }}
+              className="group relative w-[280px] h-[500px] rounded-2xl md:rounded-3xl overflow-hidden cursor-pointer block flex-shrink-0"
             >
-              <img 
-                src={work.img} 
-                alt={work.title} 
-                referrerPolicy="no-referrer"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 blur-[1px] group-hover:blur-0" 
+              {/* Autoplaying Background Video */}
+              <video 
+                src={work.video}
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
               
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-80 transition-opacity" />
               
               <div className="absolute inset-0 flex flex-col justify-end p-8">
-                <span className="text-brand-blue font-bold uppercase tracking-widest text-[10px] mb-2 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all">
+                <span className="text-brand-blue font-bold uppercase tracking-widest text-[10px] mb-2 scale-90 origin-left">
                   {work.tag}
                 </span>
-                <h3 className="text-2xl font-display font-medium text-white mb-6 translate-y-4 group-hover:translate-y-0 transition-all">
+                <h3 className="text-xl font-display font-medium text-white mb-2 group-hover:text-brand-blue transition-colors">
                   {work.title}
                 </h3>
                 
-                <div className="w-12 h-12 rounded-full glass flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity translate-y-4 group-hover:translate-y-0">
-                  <Play size={16} fill="white" className="ml-1" />
-                </div>
+                <p className="text-[10px] text-white/40 uppercase tracking-widest font-bold opacity-0 group-hover:opacity-100 transition-opacity">
+                  View Case Study
+                </p>
               </div>
-            </motion.div>
+            </motion.a>
           ))}
-        </div>
-        
-        <div className="mt-24 text-center">
-            <button className="px-8 py-4 glass rounded-full hover:bg-white/10 transition-colors uppercase tracking-[0.2em] text-xs font-bold">
-                View Archives
-            </button>
-        </div>
+        </motion.div>
+      </div>
+      
+      <div className="mt-24 text-center px-6">
+          <button className="px-8 py-4 glass rounded-full hover:bg-white/10 transition-colors uppercase tracking-[0.2em] text-xs font-bold">
+              View Archives
+          </button>
       </div>
     </section>
   );

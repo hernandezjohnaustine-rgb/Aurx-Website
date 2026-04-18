@@ -9,14 +9,14 @@ const framework = [
 
 export default function Process() {
   return (
-    <section id="process" className="py-32 bg-black border-y border-white/5 overflow-hidden">
+    <section id="process" className="py-24 md:py-32 bg-black border-y border-white/5 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col items-center mb-32 text-center">
-            <div className="text-brand-blue font-bold uppercase tracking-[0.3em] text-sm mb-4">The Methodology</div>
-            <h2 className="text-6xl md:text-8xl font-display font-medium tracking-tighter">THE AURX FRAMEWORK</h2>
+        <div className="flex flex-col items-center mb-16 md:mb-32 text-center">
+            <div className="text-brand-blue font-bold uppercase tracking-[0.3em] text-[10px] md:text-sm mb-4">The Methodology</div>
+            <h2 className="text-4xl sm:text-6xl md:text-8xl font-display font-medium tracking-tighter">THE AURX FRAMEWORK</h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-8 lg:gap-12">
           {framework.map((step, index) => (
             <motion.div
               key={step.title}
@@ -26,7 +26,7 @@ export default function Process() {
               viewport={{ once: true }}
               className="relative group h-full"
             >
-              <div className="text-[120px] font-display font-black text-white/5 leading-none absolute -top-12 -left-6 group-hover:text-brand-blue/10 transition-colors">
+              <div className="text-[80px] md:text-[120px] font-display font-black text-white/5 leading-none absolute -top-8 -left-4 md:-top-12 md:-left-6 group-hover:text-brand-blue/10 transition-colors">
                 {step.char}
               </div>
               

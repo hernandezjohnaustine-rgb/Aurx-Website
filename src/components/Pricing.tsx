@@ -4,14 +4,14 @@ import { Check } from "lucide-react";
 const plans = [
   {
     name: "Growth",
-    price: "$2,999",
+    price: "$1,499",
     tagline: "For scaling creators",
     features: ["15 Short-form Edits", "Viral Strategy Hook", "72h Turnaround", "2 Rounds of Revisions"],
     popular: false,
   },
   {
     name: "Elite",
-    price: "$5,999",
+    price: "$2,999",
     tagline: "Our most popular engine",
     features: [
       "Unlimited Short-form Edits", 
@@ -34,17 +34,17 @@ const plans = [
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="py-32 relative">
+    <section id="pricing" className="py-24 md:py-32 relative">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-24">
-          <h2 className="text-5xl md:text-7xl font-display font-medium mb-6 italic">INVESTMENT</h2>
-          <p className="text-white/40 max-w-xl mx-auto">
+        <div className="text-center mb-16 md:mb-24">
+          <h2 className="text-4xl md:text-7xl font-display font-medium mb-6 italic tracking-tighter">INVESTMENT</h2>
+          <p className="text-white/40 max-w-xl mx-auto text-sm md:text-base">
             Choose the membership tier that fits your growth trajectory. 
             All plans are subscription-based with no long-term contracts.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 items-stretch">
           {plans.map((plan, index) => (
             <motion.div
               key={plan.name}
@@ -52,9 +52,9 @@ export default function Pricing() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               viewport={{ once: true }}
-              className={`relative p-12 rounded-[40px] flex flex-col ${
-                plan.popular ? "bg-brand-blue text-white scale-105 z-10" : "surface-card text-white"
-              }`}
+              className={`relative p-8 md:p-12 rounded-3xl md:rounded-[40px] flex flex-col ${
+                plan.popular ? "bg-brand-blue text-white lg:scale-105 z-10" : "surface-card text-white"
+              } ${index === 2 && "md:col-span-2 lg:col-span-1"}`}
             >
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-white text-brand-blue px-6 py-1 rounded-full text-[10px] font-black uppercase tracking-widest">

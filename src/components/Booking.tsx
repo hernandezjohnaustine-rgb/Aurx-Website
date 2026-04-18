@@ -18,19 +18,19 @@ export default function Booking() {
   }, []);
 
   return (
-    <section id="booking" className="py-32 bg-black relative">
+    <section id="booking" className="py-24 md:py-32 bg-black relative">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 md:mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
             <div className="text-brand-blue font-bold uppercase tracking-[0.3em] text-[10px] mb-4">Final Step</div>
-            <h2 className="text-5xl md:text-7xl font-display font-medium mb-6 uppercase tracking-tighter">
+            <h2 className="text-4xl md:text-7xl font-display font-medium mb-6 uppercase tracking-tighter">
               BOOK YOUR <span className="italic">STRATEGY</span> CALL
             </h2>
-            <p className="text-brand-text-dim max-w-xl mx-auto text-lg">
+            <p className="text-brand-text-dim max-w-xl mx-auto text-base md:text-lg">
               Select a time for your onboarding consultation. We'll discuss your brand, your goals, and how the AURX framework can scale your retention.
             </p>
           </motion.div>
@@ -41,7 +41,7 @@ export default function Booking() {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="surface-card rounded-[40px] overflow-hidden p-2 md:p-6 glass relative"
+          className="surface-card rounded-3xl md:rounded-[40px] overflow-hidden p-1 sm:p-2 md:p-6 glass relative"
         >
           {/* Subtle accent glow behind widget */}
           <div className="absolute inset-0 bg-brand-blue/5 blur-3xl rounded-full -z-10" />

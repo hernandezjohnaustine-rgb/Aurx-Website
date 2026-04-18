@@ -28,19 +28,19 @@ export default function Services() {
   return (
     <section id="services" className="py-32 bg-black relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:20 gap-8">
           <div className="max-w-xl">
              <div className="text-brand-blue font-bold uppercase tracking-[0.3em] text-[10px] mb-4">Our Expertise</div>
-             <h2 className="text-5xl md:text-6xl font-medium leading-tight">
+             <h2 className="text-4xl md:text-6xl font-medium leading-tight">
                ELEVATED EDITING <br /> FOR MODERN PLATFORMS
              </h2>
           </div>
-          <p className="max-w-sm text-brand-text-dim text-lg leading-relaxed">
+          <p className="max-w-sm text-brand-text-dim text-base md:text-lg leading-relaxed">
             We specialize in performance-driven video editing that looks better and converts faster.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-1">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-1">
           {services.map((s, index) => (
             <motion.div
               key={s.title}
