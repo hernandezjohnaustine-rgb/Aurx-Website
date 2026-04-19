@@ -31,13 +31,35 @@ export default function Trust() {
           ))}
         </div>
 
-        <div className="mt-20 flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-30 grayscale hover:grayscale-0 transition-all duration-700">
-           {/* Placeholder logos - using text for branding */}
-           <div className="text-2xl font-bold tracking-tighter">NIKE</div>
-           <div className="text-2xl font-bold tracking-tighter italic">REDBULL</div>
-           <div className="text-2xl font-bold tracking-tighter">MONSTER</div>
-           <div className="text-2xl font-bold tracking-tighter italic font-display underline">VOGUE</div>
-           <div className="text-2xl font-bold tracking-tighter italic">ADOBE</div>
+        <div className="mt-24 relative overflow-hidden group">
+          {/* Edge Fade Masks */}
+          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-black/80 to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-black/80 to-transparent z-10 pointer-events-none" />
+
+          <motion.div 
+            className="flex items-center gap-12 md:gap-32 whitespace-nowrap opacity-30 grayscale hover:grayscale-0 transition-opacity hover:opacity-60 duration-500"
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{ 
+              duration: 25, 
+              repeat: Infinity, 
+              ease: "linear" 
+            }}
+          >
+            <div className="flex items-center gap-12 md:gap-32 pr-12 md:pr-32">
+              <div className="text-2xl md:text-3xl font-bold tracking-tighter">ATO PRODUCTIONS</div>
+              <div className="text-2xl md:text-3xl font-bold tracking-tighter italic">GOODLIFE STUDIOS</div>
+              <div className="text-2xl md:text-3xl font-bold tracking-tighter">MONSTER</div>
+              <div className="text-2xl md:text-3xl font-bold tracking-tighter italic font-display underline">VOGUE</div>
+              <div className="text-2xl md:text-3xl font-bold tracking-tighter italic">ADOBE</div>
+            </div>
+            <div className="flex items-center gap-12 md:gap-32 pr-12 md:pr-32">
+              <div className="text-2xl md:text-3xl font-bold tracking-tighter">ATO PRODUCTIONS</div>
+              <div className="text-2xl md:text-3xl font-bold tracking-tighter italic">GOODLIFE STUDIOS</div>
+              <div className="text-2xl md:text-3xl font-bold tracking-tighter">MONSTER</div>
+              <div className="text-2xl md:text-3xl font-bold tracking-tighter italic font-display underline">VOGUE</div>
+              <div className="text-2xl md:text-3xl font-bold tracking-tighter italic">ADOBE</div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>
