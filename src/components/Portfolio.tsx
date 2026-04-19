@@ -42,24 +42,24 @@ export default function Portfolio() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {works.map((work, index) => {
             const isYouTube = work.video.includes('youtube.com') || work.video.includes('youtu.be');
+            const isShort = work.video.includes('shorts/');
+            // The "Ads Creative Style" is also vertical
+            const isVertical = isShort || work.title.toLowerCase().includes('ads') || work.title.toLowerCase().includes('short-form');
+            
             let videoSrc = work.video;
 
             if (isYouTube) {
               let videoId = '';
-              // Handle standard watch URLs
               if (work.video.includes('v=')) {
                 videoId = work.video.split('v=')[1]?.split('&')[0];
-              } 
-              // Handle shorts
-              else if (work.video.includes('shorts/')) {
+              } else if (isShort) {
                 videoId = work.video.split('shorts/')[1]?.split('?')[0];
-              } 
-              // Handle direct IDs or youtu.be
-              else {
+              } else {
                 videoId = work.video.split('/').pop()?.split('?')[0] || '';
               }
               
-              videoSrc = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&controls=0&loop=1&playlist=${videoId}&modestbranding=1&rel=0&iv_load_policy=3&showinfo=0&vq=hd1080`;
+              // Use hd2160 for maximum bitrate headroom on PC
+              videoSrc = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&controls=0&loop=1&playlist=${videoId}&modestbranding=1&rel=0&iv_load_policy=3&showinfo=0&vq=hd2160`;
             }
 
             return (
@@ -75,12 +75,14 @@ export default function Portfolio() {
                 className="group relative h-[300px] sm:h-[400px] md:h-[500px] rounded-2xl md:rounded-3xl overflow-hidden cursor-pointer block"
               >
                 {/* Background Media */}
-                <div className="absolute inset-0 w-full h-full pointer-events-none">
+                <div className="absolute inset-0 w-full h-full pointer-events-none bg-brand-deep">
                   {isYouTube ? (
                     <div className="w-full h-full overflow-hidden relative">
                       <iframe
                         src={videoSrc}
-                        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[115%] h-[115%] min-w-full min-h-full aspect-video"
+                        className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full min-w-full min-h-full ${
+                          isVertical ? 'aspect-[9/16] h-[100%] w-auto' : 'aspect-video w-[100%] h-auto'
+                        } scale-[1.05]`}
                         frameBorder="0"
                         allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
                       />
