@@ -1,10 +1,10 @@
 import { motion } from "motion/react";
 
 const framework = [
-  { char: "A", title: "Attention", desc: "Psychology-based hooks that freeze the scroll." },
-  { char: "U", title: "User Focus", desc: "Tailoring every cut to your specific audience's vibe." },
-  { char: "R", title: "Retention", desc: "Fast-pacing and storytelling to keep eyes glued to the screen." },
-  { char: "X", title: "eXecution", desc: "Final cinematic polish and strategic sound design." },
+  { char: "A", title: "Attention", desc: "Hooks designed to immediately capture interest and stop the scroll." },
+  { char: "U", title: "User Focus", desc: "Every decision is shaped around your audience—how they think, what they respond to, and what keeps them engaged." },
+  { char: "R", title: "Retention", desc: "Pacing, structure, and storytelling built to maintain attention from start to finish." },
+  { char: "X", title: "Execution", desc: "Refined delivery with cinematic polish, sound design, and intentional finishing." },
 ];
 
 export default function Process() {
@@ -12,8 +12,11 @@ export default function Process() {
     <section id="process" className="py-24 md:py-32 bg-black border-y border-white/5 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col items-center mb-16 md:mb-32 text-center">
-            <div className="text-brand-blue font-bold uppercase tracking-[0.3em] text-[10px] md:text-sm mb-4">The Methodology</div>
-            <h2 className="text-4xl sm:text-6xl md:text-8xl font-display font-medium tracking-tighter">THE AURX FRAMEWORK</h2>
+            <div className="text-brand-blue font-bold uppercase tracking-[0.3em] text-[10px] md:text-sm mb-4">THE METHODOLOGY</div>
+            <h2 className="text-4xl sm:text-6xl md:text-8xl font-display font-medium tracking-tighter uppercase">The AURX Framework</h2>
+            <p className="text-brand-text-dim max-w-xl mx-auto mt-6 text-sm md:text-base">
+                A structured system designed to capture attention, sustain engagement, and deliver your message with clarity.
+            </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-8 lg:gap-12">

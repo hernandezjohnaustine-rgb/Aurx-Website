@@ -19,6 +19,8 @@ import Pricing from "@/components/Pricing";
 import Booking from "@/components/Booking";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
+import WhoThisIsFor from "@/components/WhoThisIsFor";
+import Reality from "@/components/Reality";
 
 export default function App() {
   return (
@@ -44,8 +46,10 @@ export default function App() {
         <Hero />
         <Trust />
         <Services />
-        <Portfolio />
+        <WhoThisIsFor />
         <Process />
+        <Reality />
+        <Portfolio />
         <Pricing />
         <FinalCTA />
         <Booking />

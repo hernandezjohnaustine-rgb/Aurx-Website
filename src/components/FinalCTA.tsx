@@ -17,12 +17,11 @@ export default function FinalCTA() {
           <div className="absolute inset-0 opacity-10 pointer-events-none bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px]" />
           
           <h2 className="text-3xl sm:text-5xl md:text-8xl font-display font-medium tracking-tighter mb-8 md:mb-12 leading-[1.1]">
-            READY TO <span className="text-brand-blue">SCALE</span> <br /> YOUR CONTENT?
+            LET'S <span className="text-brand-blue">STRUCTURE</span> <br /> YOUR PERFORMANCE.
           </h2>
           
           <p className="text-white/50 text-base sm:text-xl max-w-2xl mx-auto mb-10 md:mb-16 leading-relaxed">
-            Stop worrying about editing. Start focusing on creating. 
-            Join the AURX ecosystem and dominate your niche.
+            Move beyond standard editing. Join AURX and turn your content into a high-retention growth asset.
           </p>
 
           <a href="#booking" className="group w-full sm:w-auto flex items-center justify-center gap-3 bg-white text-black px-8 md:px-12 py-4 md:py-6 rounded-full font-black text-xs md:text-sm uppercase tracking-[0.2em] hover:bg-brand-blue hover:text-white transition-all mx-auto cursor-pointer">

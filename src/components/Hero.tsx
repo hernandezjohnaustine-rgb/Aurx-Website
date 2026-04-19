@@ -27,22 +27,31 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-display font-medium leading-[0.95] mb-8 text-gradient"
         >
-          WHERE ATTENTION <br /> 
+          IS YOUR MESSAGE <br /> 
           <span className="italic flex items-center justify-center gap-2 sm:gap-4">
-            MEETS
+            CAPTURING
             <div className="h-[2px] w-8 sm:w-16 md:w-24 lg:w-32 bg-white/20" />
           </span>
-          EXECUTION
+          ATTENTION?
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-brand-text-dim text-sm sm:text-base md:text-xl lg:text-2xl max-w-2xl mx-auto mb-10 md:mb-12 font-light leading-relaxed px-4 sm:px-0"
+          className="text-brand-text-dim text-sm sm:text-base md:text-xl lg:text-2xl max-w-2xl mx-auto mb-4 font-light leading-relaxed px-4 sm:px-0"
         >
-          We turn raw content into high-retention cinematic assets that drive millions in revenue for top-tier creators.
+          Because attention isn’t just reached—it needs to be held.
         </motion.p>
+        
+        <motion.div
+           initial={{ opacity: 0, y: 10 }}
+           animate={{ opacity: 1, y: 0 }}
+           transition={{ duration: 0.8, delay: 0.5 }}
+           className="text-white/40 text-[10px] md:text-sm max-w-xl mx-auto mb-10 md:mb-12 font-medium leading-relaxed uppercase tracking-widest"
+        >
+           We turn raw ideas into high-retention video experiences designed to capture interest, sustain focus, and deliver your message with clarity.
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}

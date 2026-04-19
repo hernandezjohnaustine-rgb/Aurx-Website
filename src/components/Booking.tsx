@@ -26,12 +26,12 @@ export default function Booking() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <div className="text-brand-blue font-bold uppercase tracking-[0.3em] text-[10px] mb-4">Final Step</div>
+            <div className="text-brand-blue font-bold uppercase tracking-[0.3em] text-[10px] mb-4">30-minute strategy call • No commitment</div>
             <h2 className="text-4xl md:text-7xl font-display font-medium mb-6 uppercase tracking-tighter">
-              BOOK YOUR <span className="italic">STRATEGY</span> CALL
+              Let’s structure your content for <span className="italic text-brand-blue">real performance.</span>
             </h2>
-            <p className="text-brand-text-dim max-w-xl mx-auto text-base md:text-lg">
-              Select a time for your onboarding consultation. We'll discuss your brand, your goals, and how the AURX framework can scale your retention.
+            <p className="text-brand-text-dim max-w-2xl mx-auto text-base md:text-lg">
+              In this call, we’ll discuss your content, your goals, and where AURX can best support your editing for stronger performance.
             </p>
           </motion.div>
         </div>

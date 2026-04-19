@@ -4,25 +4,25 @@ import { Play } from "lucide-react";
 const works = [
   { 
     title: "Ads Creative Style", 
-    tag: "High Ticket", 
+    tag: "Engineered for conversion", 
     video: "https://www.youtube.com/watch?v=Jh0a6UvzQHk", 
     link: "#"
   },
   { 
     title: "Short-Form Loop", 
-    tag: "Viral", 
+    tag: "Optimized for retention", 
     video: "https://www.youtube.com/shorts/lvxyEd_6n7E",
     link: "#"
   },
   { 
     title: "Motion VFX Showcase", 
-    tag: "3D Motion", 
+    tag: "Elevates visual authority", 
     video: "https://www.youtube.com/shorts/8jQ7iuW5S8E",
     link: "#"
   },
   { 
     title: "Clean Short-form", 
-    tag: "Showcase", 
+    tag: "Delivery with clarity", 
     video: "https://www.youtube.com/shorts/JY0UqxDF_2s",
     link: "#"
   },
@@ -33,9 +33,10 @@ export default function Portfolio() {
     <section id="portfolio" className="py-24 md:py-32 bg-brand-deep/20 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16 md:mb-24">
-          <h2 className="text-4xl md:text-7xl font-display font-medium mb-6">SELECTED WORKS</h2>
-          <p className="text-white/40 max-w-xl mx-auto text-sm md:text-base">
-            Our high-performance edits aren't just seen—they're felt. Watch our latest engine executions in real-time.
+          <h2 className="text-4xl md:text-7xl font-display font-medium mb-6 uppercase">SELECTED WORKS</h2>
+          <p className="text-white/40 max-w-2xl mx-auto text-sm md:text-base">
+            A selection of work across creators, brands, and agencies—focused on clarity, retention, and performance. 
+            Each piece follows the AURX Framework—built to guide attention from the first second to the final message.
           </p>
         </div>
 
