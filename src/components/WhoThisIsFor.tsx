@@ -24,58 +24,34 @@ import { Play } from "lucide-react";
 
 export default function WhoThisIsFor() {
   return (
-    <section className="py-24 md:py-32 bg-black overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-24 items-center">
-          <div>
-            <h2 className="text-4xl md:text-6xl font-display font-medium mb-8 leading-tight">
-              Built for those <span className="text-brand-blue italic">serious</span> about how their content performs.
-            </h2>
-            
-            <div className="space-y-6 md:space-y-8 mt-12">
-              {audiences.map((item, i) => (
-                <motion.div 
-                  key={i}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.1 }}
-                  viewport={{ once: true }}
-                  className="flex items-start gap-5"
-                >
-                  <div className="mt-1">{item.icon}</div>
-                  <p className="text-brand-text-dim text-base md:text-lg leading-relaxed">
-                    {item.text}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-
-          <div className="surface-card p-10 md:p-16 rounded-[40px] relative">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-brand-blue/10 blur-3xl -z-10" />
-            
-            <h3 className="text-brand-blue font-bold uppercase tracking-[0.2em] text-xs mb-8">Identity Layer</h3>
-            
-            <ul className="space-y-6">
-              {[
-                "Focused on growth, not just output",
-                "Intentional with how content is structured and delivered",
-                "Committed to consistency and execution",
-                "Not just creating—but building something that lasts"
-              ].map((text, i) => (
-                <li key={i} className="flex items-center gap-4 text-white/80 font-medium">
-                  <CheckCircle2 size={20} className="text-brand-blue flex-shrink-0" />
-                  {text}
-                </li>
-              ))}
-            </ul>
-
-            <div className="mt-12 pt-12 border-t border-white/5">
-              <p className="text-white/40 italic text-sm md:text-base leading-relaxed">
-                "Not built for quick, one-off edits—this is for those investing in content as a long-term growth asset."
+    <section className="py-24 md:py-40 bg-black overflow-hidden relative">
+      <div className="glow-blue w-[600px] h-[600px] -top-1/4 -right-1/4 opacity-10" />
+      
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="text-center mb-20 md:mb-32">
+          <h2 className="text-4xl md:text-7xl font-display font-medium leading-tight tracking-tighter uppercase mx-auto max-w-4xl">
+            Built for those <span className="text-brand-blue italic">serious</span> about how their content performs.
+          </h2>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+          {audiences.map((item, i) => (
+            <motion.div 
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.1 }}
+              viewport={{ once: true }}
+              className="surface-card p-8 md:p-12 rounded-[32px] md:rounded-[48px] border-white/5 flex flex-col gap-6 group hover:border-brand-blue/30 transition-colors"
+            >
+              <div className="w-14 h-14 rounded-2xl bg-brand-blue/10 flex items-center justify-center text-brand-blue group-hover:scale-110 transition-transform duration-500">
+                {item.icon}
+              </div>
+              <p className="text-white/80 text-lg md:text-2xl font-light leading-snug">
+                {item.text}
               </p>
-            </div>
-          </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

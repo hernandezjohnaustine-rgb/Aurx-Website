@@ -5,40 +5,21 @@ export default function Services() {
   return (
     <section id="services" className="py-32 bg-black relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-24 items-center mb-24 md:mb-32">
-          <div className="max-w-2xl">
+        <div className="flex flex-col items-center text-center">
+          <div className="max-w-3xl">
               <div className="text-brand-blue font-bold uppercase tracking-[0.3em] text-[10px] mb-6">What is AURX</div>
-              <h2 className="text-4xl md:text-6xl font-display font-medium leading-tight mb-8">
+              <h2 className="text-4xl md:text-7xl font-display font-medium leading-[1.1] mb-8 uppercase tracking-tighter">
                 AURX IS A <br /> 
-                <span className="italic">PERFORMANCE-DRIVEN</span> <br /> 
+                <span className="italic text-brand-blue">PERFORMANCE-DRIVEN</span> <br /> 
                 CONTENT SYSTEM.
               </h2>
-              <p className="text-white font-medium text-lg md:text-2xl mb-8 leading-relaxed">
+              <p className="text-white font-medium text-lg md:text-3xl mb-10 leading-tight">
                 Not just editing—but structured execution designed to capture attention, hold interest, and deliver your message with intent.
               </p>
-              <p className="text-brand-text-dim text-base md:text-lg leading-relaxed">
+              <div className="h-px w-24 bg-brand-blue/30 mx-auto mb-10" />
+              <p className="text-brand-text-dim text-base md:text-xl leading-relaxed max-w-2xl mx-auto">
                 We approach every project through a system built around attention and retention—combining strategy, pacing, and visual execution to create content that doesn’t just look refined, but performs with purpose.
               </p>
-          </div>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-6">
-            {[
-              { label: "Views Generated", value: "25M+" },
-              { label: "Edits Delivered", value: "1,000+" },
-              { label: "Client Satisfaction", value: "98%" }
-            ].map((stat, i) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ delay: i * 0.1 }}
-                viewport={{ once: true }}
-                className="surface-card p-8 rounded-3xl text-center lg:text-left border-white/5"
-              >
-                <div className="text-3xl md:text-5xl font-display font-bold text-brand-blue mb-1">{stat.value}</div>
-                <div className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-white/40">{stat.label}</div>
-              </motion.div>
-            ))}
           </div>
         </div>
       </div>

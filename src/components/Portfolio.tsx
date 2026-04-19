@@ -116,9 +116,14 @@ export default function Portfolio() {
         </div>
         
         <div className="mt-24 text-center">
-            <button className="px-8 py-4 glass rounded-full hover:bg-white/10 transition-colors uppercase tracking-[0.2em] text-xs font-bold">
-                View Archives
-            </button>
+            <a 
+              href="https://f.io/qp_cCP32" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-block px-8 py-4 glass rounded-full hover:bg-white/10 transition-colors uppercase tracking-[0.2em] text-xs font-bold cursor-pointer"
+            >
+                View More
+            </a>
         </div>
       </div>
     </section>

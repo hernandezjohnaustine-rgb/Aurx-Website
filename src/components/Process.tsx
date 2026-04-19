@@ -4,7 +4,7 @@ const framework = [
   { char: "A", title: "Attention", desc: "Hooks designed to immediately capture interest and stop the scroll." },
   { char: "U", title: "User Focus", desc: "Every decision is shaped around your audience—how they think, what they respond to, and what keeps them engaged." },
   { char: "R", title: "Retention", desc: "Pacing, structure, and storytelling built to maintain attention from start to finish." },
-  { char: "X", title: "Execution", desc: "Refined delivery with cinematic polish, sound design, and intentional finishing." },
+  { char: "X", title: "eXecution", desc: "Refined delivery with cinematic polish, sound design, and intentional finishing." },
 ];
 
 export default function Process() {

@@ -3,15 +3,14 @@ import { motion } from "motion/react";
 const stats = [
   { label: "Views Generated", value: "25M+" },
   { label: "High Retention Edits", value: "1.2k+" },
-  { label: "Client Satisfied", value: "98%" },
-  { label: "Brand Partners", value: "45+" },
+  { label: "Clients Served", value: "45+" },
 ];
 
 export default function Trust() {
   return (
     <section className="py-24 border-y border-brand-border relative bg-brand-surface/40 backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-12 text-center">
           {stats.map((stat, index) => (
             <motion.div
               key={stat.label}
@@ -33,32 +32,39 @@ export default function Trust() {
 
         <div className="mt-24 relative overflow-hidden group">
           {/* Edge Fade Masks */}
-          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-black/80 to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-black/80 to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-32 md:w-64 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-32 md:w-64 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
 
           <motion.div 
-            className="flex items-center gap-12 md:gap-32 whitespace-nowrap opacity-30 grayscale hover:grayscale-0 transition-opacity hover:opacity-60 duration-500"
+            className="flex items-center whitespace-nowrap opacity-30 grayscale hover:grayscale-0 transition-opacity hover:opacity-100 duration-500"
             animate={{ x: ["0%", "-50%"] }}
             transition={{ 
-              duration: 25, 
+              duration: 18, // Faster, smoother pace
               repeat: Infinity, 
-              ease: "linear" 
+              ease: "linear",
+              repeatType: "loop"
             }}
           >
-            <div className="flex items-center gap-12 md:gap-32 pr-12 md:pr-32">
-              <div className="text-2xl md:text-3xl font-bold tracking-tighter">ATO PRODUCTIONS</div>
-              <div className="text-2xl md:text-3xl font-bold tracking-tighter italic">GOODLIFE STUDIOS</div>
-              <div className="text-2xl md:text-3xl font-bold tracking-tighter">MONSTER</div>
-              <div className="text-2xl md:text-3xl font-bold tracking-tighter italic font-display underline">VOGUE</div>
-              <div className="text-2xl md:text-3xl font-bold tracking-tighter italic">ADOBE</div>
-            </div>
-            <div className="flex items-center gap-12 md:gap-32 pr-12 md:pr-32">
-              <div className="text-2xl md:text-3xl font-bold tracking-tighter">ATO PRODUCTIONS</div>
-              <div className="text-2xl md:text-3xl font-bold tracking-tighter italic">GOODLIFE STUDIOS</div>
-              <div className="text-2xl md:text-3xl font-bold tracking-tighter">MONSTER</div>
-              <div className="text-2xl md:text-3xl font-bold tracking-tighter italic font-display underline">VOGUE</div>
-              <div className="text-2xl md:text-3xl font-bold tracking-tighter italic">ADOBE</div>
-            </div>
+            {[...Array(2)].map((_, i) => (
+              <div key={i} className="flex items-center">
+                {[
+                  "ATO PRODUCTIONS",
+                  "GOODLIFE STUDIOS",
+                  "MONSTER",
+                  "VOGUE",
+                  "ADOBE"
+                ].map((brand, bIndex) => (
+                  <div 
+                    key={brand} 
+                    className={`text-2xl md:text-4xl font-bold tracking-tighter px-12 md:px-24 ${
+                      brand === "GOODLIFE STUDIOS" || brand === "VOGUE" || brand === "ADOBE" ? "" : ""
+                    } ${brand === "VOGUE" ? "font-display underline" : ""}`}
+                  >
+                    {brand}
+                  </div>
+                ))}
+              </div>
+            ))}
           </motion.div>
         </div>
       </div>
