@@ -3,27 +3,27 @@ import { Play } from "lucide-react";
 
 const works = [
   { 
-    title: "Ads Creative", 
+    title: "Ads Creative Style", 
     tag: "High Ticket", 
-    video: "https://www.youtube.com/watch?v=Jh0a6UvzQHk", // High-quality 1080p vertical placeholder
-    link: "https://www.youtube.com/watch?v=Jh0a6UvzQHk"
-  },
-  { 
-    title: "Documentary Style", 
-    tag: "Narrative", 
-    video: "https://cdn.pixabay.com/video/2021/09/14/88562-605809707_large.mp4",
+    video: "https://www.youtube.com/watch?v=Jh0a6UvzQHk", 
     link: "#"
   },
   { 
     title: "Short-Form Loop", 
     tag: "Viral", 
-    video: "https://cdn.pixabay.com/video/2024/01/24/197940-906060136_large.mp4",
+    video: "https://www.youtube.com/shorts/lvxyEd_6n7E",
     link: "#"
   },
   { 
     title: "Motion VFX Showcase", 
     tag: "3D Motion", 
-    video: "https://cdn.pixabay.com/video/2021/04/14/71120-538183186_large.mp4",
+    video: "https://www.youtube.com/shorts/8jQ7iuW5S8E",
+    link: "#"
+  },
+  { 
+    title: "Clean Short-form", 
+    tag: "Showcase", 
+    video: "https://www.youtube.com/shorts/JY0UqxDF_2s",
     link: "#"
   },
 ];
@@ -75,15 +75,16 @@ export default function Portfolio() {
                 className="group relative h-[350px] md:h-[500px] rounded-2xl md:rounded-3xl overflow-hidden cursor-pointer block"
               >
                 {/* Background Media */}
-                <div className="absolute inset-0 w-full h-full">
+                <div className="absolute inset-0 w-full h-full pointer-events-none">
                   {isYouTube ? (
-                    <iframe
-                      src={videoSrc}
-                      className="w-full h-full object-cover pointer-events-none scale-[1.5]" // Scale to hide borders/branding
-                      frameBorder="0"
-                      allow="autoplay; encrypted-media"
-                      allowFullScreen
-                    />
+                    <div className="w-full h-full overflow-hidden relative">
+                      <iframe
+                        src={videoSrc}
+                        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[115%] h-[115%] min-w-full min-h-full aspect-video"
+                        frameBorder="0"
+                        allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
+                      />
+                    </div>
                   ) : (
                     <video 
                       src={work.video}
