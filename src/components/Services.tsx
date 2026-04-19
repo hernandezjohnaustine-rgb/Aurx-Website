@@ -28,14 +28,14 @@ export default function Services() {
   return (
     <section id="services" className="py-32 bg-black relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:20 gap-8">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-20 gap-8">
           <div className="max-w-xl">
              <div className="text-brand-blue font-bold uppercase tracking-[0.3em] text-[10px] mb-4">Our Expertise</div>
-             <h2 className="text-4xl md:text-6xl font-medium leading-tight">
-               ELEVATED EDITING <br /> FOR MODERN PLATFORMS
+             <h2 className="text-3xl sm:text-4xl md:text-6xl font-medium leading-[1.1] md:leading-tight">
+               ELEVATED EDITING <br className="hidden sm:block" /> FOR MODERN PLATFORMS
              </h2>
           </div>
-          <p className="max-w-sm text-brand-text-dim text-base md:text-lg leading-relaxed">
+          <p className="max-w-sm text-brand-text-dim text-sm sm:text-base md:text-lg leading-relaxed">
             We specialize in performance-driven video editing that looks better and converts faster.
           </p>
         </div>

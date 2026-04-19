@@ -22,7 +22,7 @@ import Footer from "@/components/Footer";
 
 export default function App() {
   return (
-    <div className="relative selection:bg-brand-blue/30 selection:text-white">
+    <div className="relative selection:bg-brand-blue/30 selection:text-white overflow-x-hidden">
       {/* Background Noise Texture Overlay */}
       <div className="fixed inset-0 pointer-events-none z-[9999] opacity-[0.03] contrast-150 grayscale mix-blend-overlay">
         <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">

@@ -30,7 +30,7 @@ const works = [
 
 export default function Portfolio() {
   return (
-    <section id="portfolio" className="py-24 md:py-32 bg-brand-deep/20">
+    <section id="portfolio" className="py-24 md:py-32 bg-brand-deep/20 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16 md:mb-24">
           <h2 className="text-4xl md:text-7xl font-display font-medium mb-6">SELECTED WORKS</h2>
@@ -72,7 +72,7 @@ export default function Portfolio() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="group relative h-[350px] md:h-[500px] rounded-2xl md:rounded-3xl overflow-hidden cursor-pointer block"
+                className="group relative h-[300px] sm:h-[400px] md:h-[500px] rounded-2xl md:rounded-3xl overflow-hidden cursor-pointer block"
               >
                 {/* Background Media */}
                 <div className="absolute inset-0 w-full h-full pointer-events-none">

@@ -25,12 +25,12 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-4xl sm:text-6xl md:text-8xl font-display font-medium leading-[0.95] mb-8 text-gradient"
+          className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-display font-medium leading-[0.95] mb-8 text-gradient"
         >
           WHERE ATTENTION <br /> 
           <span className="italic flex items-center justify-center gap-2 sm:gap-4">
             MEETS
-            <div className="h-[2px] w-12 sm:w-24 md:w-32 bg-white/20" />
+            <div className="h-[2px] w-8 sm:w-16 md:w-24 lg:w-32 bg-white/20" />
           </span>
           EXECUTION
         </motion.h1>
@@ -39,7 +39,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-brand-text-dim text-base sm:text-lg md:text-2xl max-w-2xl mx-auto mb-12 font-light leading-relaxed"
+          className="text-brand-text-dim text-sm sm:text-base md:text-xl lg:text-2xl max-w-2xl mx-auto mb-10 md:mb-12 font-light leading-relaxed px-4 sm:px-0"
         >
           We turn raw content into high-retention cinematic assets that drive millions in revenue for top-tier creators.
         </motion.p>
@@ -50,14 +50,14 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6"
         >
-          <a href="#booking" className="group w-full sm:w-auto flex items-center justify-center gap-3 bg-brand-blue text-white px-8 md:px-10 py-4 md:py-5 rounded-full font-bold text-base md:text-lg hover:shadow-[0_0_40px_rgba(0,102,255,0.4)] transition-all cursor-pointer">
+          <a href="#booking" className="group w-full sm:w-auto flex items-center justify-center gap-3 bg-brand-blue text-white px-6 sm:px-8 md:px-10 py-4 md:py-5 rounded-full font-bold text-sm sm:text-base md:text-lg hover:shadow-[0_0_40px_rgba(0,102,255,0.4)] transition-all cursor-pointer">
             GET STARTED 
-            <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
           </a>
           
-          <a href="#portfolio" className="flex items-center justify-center gap-3 text-white/70 hover:text-white transition-colors cursor-pointer px-6 md:px-8 py-4 md:py-5">
-            <div className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-white/20 flex items-center justify-center group">
-              <Play size={14} fill="white" className="ml-0.5 group-hover:scale-110 transition-transform" />
+          <a href="#portfolio" className="flex items-center justify-center gap-3 text-white/70 hover:text-white transition-colors cursor-pointer px-4 sm:px-6 md:px-8 py-4 md:py-5 text-sm sm:text-base">
+            <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full border border-white/20 flex items-center justify-center group">
+              <Play size={12} fill="white" className="ml-0.5 group-hover:scale-110 transition-transform" />
             </div>
             VIEW PORTFOLIO
           </a>
