@@ -17,7 +17,6 @@ import Portfolio from "@/components/Portfolio";
 import Process from "@/components/Process";
 import Pricing from "@/components/Pricing";
 import Booking from "@/components/Booking";
-import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
 import WhoThisIsFor from "@/components/WhoThisIsFor";
 import Reality from "@/components/Reality";
@@ -51,7 +50,6 @@ export default function App() {
         <Reality />
         <Portfolio />
         <Pricing />
-        <FinalCTA />
         <Booking />
       </main>
 

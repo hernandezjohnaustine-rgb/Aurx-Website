@@ -30,42 +30,73 @@ export default function Trust() {
           ))}
         </div>
 
-        <div className="mt-24 relative overflow-hidden group">
-          {/* Edge Fade Masks */}
-          <div className="absolute left-0 top-0 bottom-0 w-32 md:w-64 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-32 md:w-64 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
-
-          <motion.div 
-            className="flex items-center whitespace-nowrap opacity-30 grayscale hover:grayscale-0 transition-opacity hover:opacity-100 duration-500"
-            animate={{ x: ["0%", "-50%"] }}
-            transition={{ 
-              duration: 18, // Faster, smoother pace
-              repeat: Infinity, 
-              ease: "linear",
-              repeatType: "loop"
-            }}
-          >
-            {[...Array(2)].map((_, i) => (
-              <div key={i} className="flex items-center">
-                {[
-                  "ATO PRODUCTIONS",
-                  "GOODLIFE STUDIOS",
-                  "MONSTER",
-                  "VOGUE",
-                  "ADOBE"
-                ].map((brand, bIndex) => (
-                  <div 
-                    key={brand} 
-                    className={`text-2xl md:text-4xl font-bold tracking-tighter px-12 md:px-24 ${
-                      brand === "GOODLIFE STUDIOS" || brand === "VOGUE" || brand === "ADOBE" ? "" : ""
-                    } ${brand === "VOGUE" ? "font-display underline" : ""}`}
-                  >
-                    {brand}
-                  </div>
-                ))}
+        <div className="mt-24 space-y-12">
+          <div className="text-center relative py-8">
+            <div className="absolute inset-0 flex items-center justify-center -z-10">
+              <div className="w-64 h-64 bg-brand-blue/5 blur-[100px] rounded-full" />
+            </div>
+            
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="inline-flex flex-col items-center"
+            >
+              <h3 className="text-xl md:text-4xl font-display font-bold tracking-tight text-white mb-4 leading-none uppercase">
+                BUILT TO HELP BRANDS <span className="text-brand-blue italic">SCALE.</span>
+              </h3>
+              <div className="flex items-center gap-4 w-full">
+                <div className="h-px flex-grow bg-gradient-to-r from-transparent via-brand-blue/40 to-transparent" />
+                <p className="text-brand-text-dim text-[10px] md:text-xs uppercase tracking-[0.4em] font-black whitespace-nowrap">
+                  Trusted by Industry Leaders
+                </p>
+                <div className="h-px flex-grow bg-gradient-to-r from-transparent via-brand-blue/40 to-transparent" />
               </div>
-            ))}
-          </motion.div>
+            </motion.div>
+          </div>
+
+          <div className="relative overflow-hidden group">
+            {/* Edge Fade Masks */}
+            <div className="absolute left-0 top-0 bottom-0 w-32 md:w-64 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-32 md:w-64 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
+
+            <motion.div 
+              className="flex items-center whitespace-nowrap opacity-30 grayscale hover:grayscale-0 transition-opacity hover:opacity-100 duration-500"
+              animate={{ x: ["0%", "-50%"] }}
+              transition={{ 
+                duration: 35, // Adjusted for the expanded brand list
+                repeat: Infinity, 
+                ease: "linear",
+                repeatType: "loop"
+              }}
+            >
+              {[...Array(2)].map((_, i) => (
+                <div key={i} className="flex items-center">
+                  {[
+                    "ATO PRODUCTIONS",
+                    "GOODLIFE STUDIOS",
+                    "MONSTER",
+                    "VOGUE",
+                    "ADOBE",
+                    "W.E SOLUTIONS GROUP",
+                    "LOUISE CARTER",
+                    "HARBOR WRAPS",
+                    "MOONLIGHT AUDIO",
+                    "SHIFT ROOFING",
+                  ].map((brand) => (
+                    <div 
+                      key={brand} 
+                      className={`text-2xl md:text-5xl font-bold tracking-tighter px-12 md:px-24 transition-transform hover:scale-105 duration-300 ${
+                        ["GOODLIFE STUDIOS", "HARBOR WRAPS", "SHIFT ROOFING"].includes(brand) ? "" : ""
+                      } ${brand === "VOGUE" ? "" : ""}`}
+                    >
+                      {brand}
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </motion.div>
+          </div>
         </div>
       </div>
     </section>

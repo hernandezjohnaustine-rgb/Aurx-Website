@@ -29,6 +29,9 @@ export default function WhoThisIsFor() {
       
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-20 md:mb-32">
+          <p className="text-brand-blue text-[10px] md:text-xs uppercase tracking-[0.5em] font-black mb-6">
+            Who This Is For
+          </p>
           <h2 className="text-4xl md:text-7xl font-display font-medium leading-tight tracking-tighter uppercase mx-auto max-w-4xl">
             Built for those <span className="text-brand-blue italic">serious</span> about how their content performs.
           </h2>
@@ -47,7 +50,7 @@ export default function WhoThisIsFor() {
               <div className="w-14 h-14 rounded-2xl bg-brand-blue/10 flex items-center justify-center text-brand-blue group-hover:scale-110 transition-transform duration-500">
                 {item.icon}
               </div>
-              <p className="text-white/80 text-lg md:text-2xl font-light leading-snug">
+              <p className="text-white text-lg md:text-2xl font-bold leading-tight tracking-tight">
                 {item.text}
               </p>
             </motion.div>

@@ -33,8 +33,6 @@ export default function Reality() {
 
           <p>
             This highlights a clear shift: attention is no longer gradual—it’s decided almost instantly. 
-            This is where most content falls short—not in quality, but in its ability to capture and 
-            sustain attention from the very first second.
           </p>
 
           <p className="text-white font-medium italic">
