@@ -57,14 +57,14 @@ export default function Trust() {
 
           <div className="relative overflow-hidden group">
             {/* Edge Fade Masks */}
-            <div className="absolute left-0 top-0 bottom-0 w-32 md:w-64 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-32 md:w-64 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
+            <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-black via-black/50 to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-black via-black/50 to-transparent z-10 pointer-events-none" />
 
             <motion.div 
-              className="flex items-center whitespace-nowrap opacity-30 grayscale hover:grayscale-0 transition-opacity hover:opacity-100 duration-500"
+              className="flex items-center whitespace-nowrap opacity-80"
               animate={{ x: ["0%", "-50%"] }}
               transition={{ 
-                duration: 35, // Adjusted for the expanded brand list
+                duration: 40, // Slightly slower for better readability
                 repeat: Infinity, 
                 ease: "linear",
                 repeatType: "loop"
@@ -86,9 +86,7 @@ export default function Trust() {
                   ].map((brand) => (
                     <div 
                       key={brand} 
-                      className={`text-2xl md:text-5xl font-bold tracking-tighter px-12 md:px-24 transition-transform hover:scale-105 duration-300 ${
-                        ["GOODLIFE STUDIOS", "HARBOR WRAPS", "SHIFT ROOFING"].includes(brand) ? "" : ""
-                      } ${brand === "VOGUE" ? "" : ""}`}
+                      className="text-2xl md:text-5xl font-bold tracking-tighter px-12 md:px-24 transition-transform hover:scale-105 duration-300 text-white"
                     >
                       {brand}
                     </div>

@@ -4,19 +4,23 @@ import { CheckCircle2, Target, TrendingUp, Users } from "lucide-react";
 const audiences = [
   {
     icon: <Users className="text-brand-blue" />,
-    text: "Content creators who want to turn attention into real engagement and growth"
+    title: "Content creators",
+    description: "who want to turn attention into real engagement and growth"
   },
   {
     icon: <Target className="text-brand-blue" />,
-    text: "Coaches and course creators who need their message to land clearly and consistently"
+    title: "Coaches and course creators",
+    description: "who need their message to land clearly and consistently"
   },
   {
-    icon: <Play className="text-brand-blue" />, // Changed to Play since ArrowRight was used elsewhere
-    text: "YouTubers focused on retention, storytelling, and long-term audience building"
+    icon: <Play className="text-brand-blue" />,
+    title: "YouTubers",
+    description: "focused on retention, storytelling, and long-term audience building"
   },
   {
     icon: <TrendingUp className="text-brand-blue" />,
-    text: "Content producers and agencies looking to scale output while maintaining high-quality execution"
+    title: "Content producers and agencies",
+    description: "looking to scale output while maintaining high-quality execution"
   }
 ];
 
@@ -50,8 +54,9 @@ export default function WhoThisIsFor() {
               <div className="w-14 h-14 rounded-2xl bg-brand-blue/10 flex items-center justify-center text-brand-blue group-hover:scale-110 transition-transform duration-500">
                 {item.icon}
               </div>
-              <p className="text-white text-lg md:text-2xl font-bold leading-tight tracking-tight">
-                {item.text}
+              <p className="text-white text-lg md:text-2xl leading-tight tracking-tight">
+                <span className="font-bold">{item.title}</span>{" "}
+                <span className="font-light text-white/70">{item.description}</span>
               </p>
             </motion.div>
           ))}
