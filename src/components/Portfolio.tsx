@@ -117,7 +117,7 @@ export default function Portfolio() {
         
         <div className="mt-24 text-center">
             <a 
-              href="https://f.io/qp_cCP32" 
+              href="https://f.io/blSeUQXS" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-block px-8 py-4 glass rounded-full hover:bg-white/10 transition-colors uppercase tracking-[0.2em] text-xs font-bold cursor-pointer"
