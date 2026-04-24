@@ -18,9 +18,9 @@ export default function Navbar() {
 
         <div className="flex items-center gap-4">
           <div className="hidden md:flex items-center gap-4">
-            <a href="#services" className="nav-pill">About Us</a>
+            <a href="#services" className="nav-pill">Services</a>
             <a href="#portfolio" className="nav-pill">Portfolio</a>
-            <a href="#pricing" className="nav-pill">Services</a>
+            <a href="#services-pricing" className="nav-pill">Services</a>
           </div>
 
           <a href="#booking" className="bg-white text-black px-3 sm:px-6 py-1.5 sm:py-2 rounded-full font-bold text-[10px] sm:text-sm hover:bg-brand-blue hover:text-white transition-all cursor-pointer whitespace-nowrap">

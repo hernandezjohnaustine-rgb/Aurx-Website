@@ -71,12 +71,19 @@ export default function Portfolio() {
                 key={work.title}
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
+                whileHover="hover"
                 transition={{ delay: index * 0.1 }}
                 viewport={{ once: true }}
                 className="group relative h-[300px] sm:h-[400px] md:h-[500px] rounded-2xl md:rounded-3xl overflow-hidden cursor-pointer block"
               >
                 {/* Background Media */}
-                <div className="absolute inset-0 w-full h-full pointer-events-none bg-brand-deep">
+                <motion.div 
+                  className="absolute inset-0 w-full h-full pointer-events-none bg-brand-deep"
+                  variants={{
+                    hover: { scale: 1.05 }
+                  }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                >
                   {isYouTube ? (
                     <div className="w-full h-full overflow-hidden relative">
                       <iframe
@@ -98,17 +105,36 @@ export default function Portfolio() {
                       className="w-full h-full object-cover"
                     />
                   )}
-                </div>
+                </motion.div>
                 
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80 z-10" />
                 
                 <div className="absolute inset-0 flex flex-col justify-end p-8 z-20">
-                  <span className="text-brand-blue font-bold uppercase tracking-widest text-[10px] mb-2">
-                    {work.tag}
-                  </span>
-                  <h3 className="text-xl font-display font-medium text-white">
-                    {work.title}
-                  </h3>
+                  <motion.div
+                    variants={{
+                      hover: { y: -5 }
+                    }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
+                  >
+                    <span className="text-brand-blue font-bold uppercase tracking-widest text-[10px] mb-2 block">
+                      {work.tag}
+                    </span>
+                    <h3 className="text-xl font-display font-medium text-white">
+                      {work.title}
+                    </h3>
+                  </motion.div>
+                  
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    variants={{
+                      hover: { opacity: 1, y: 0 }
+                    }}
+                    className="mt-4"
+                  >
+                    <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center backdrop-blur-sm border border-white/10">
+                      <Play size={16} className="text-white fill-white ml-1" />
+                    </div>
+                  </motion.div>
                 </div>
               </motion.a>
             );
@@ -117,7 +143,7 @@ export default function Portfolio() {
         
         <div className="mt-24 text-center">
             <a 
-              href="https://f.io/blSeUQXS" 
+              href="https://f.io/rySJ1SsU" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-block px-8 py-4 glass rounded-full hover:bg-white/10 transition-colors uppercase tracking-[0.2em] text-xs font-bold cursor-pointer"
