@@ -67,28 +67,30 @@ function PricingCard({ plan, i }: { plan: typeof plans[0], i: number; key?: stri
       transition={{ delay: i * 0.1 }}
       viewport={{ once: true }}
       onMouseMove={handleMouseMove}
-      className={`relative p-8 md:p-12 rounded-[40px] border flex flex-col h-full transition-all duration-500 group overflow-hidden ${
+      className={`relative p-8 md:p-12 rounded-[40px] border flex flex-col h-full transition-all duration-500 group ${
         plan.highlight 
         ? "bg-[#001030] border-brand-blue/50 text-white shadow-xl hover:shadow-brand-blue/20" 
         : "bg-[#020617] border-white/5 text-white hover:border-white/10 shadow-xl hover:shadow-white/5"
       }`}
     >
-      {/* Spotlight Effect overlay */}
-      <motion.div
-        className="pointer-events-none absolute -inset-px rounded-[40px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-        style={{
-          background: useMotionTemplate`
-            radial-gradient(
-              650px circle at ${mouseX}px ${mouseY}px,
-              rgba(0, 14, 255, ${plan.highlight ? "0.2" : "0.15"}),
-              transparent 80%
-            )
-          `,
-        }}
-      />
+      {/* Background/Spotlight Container */}
+      <div className="absolute inset-0 rounded-[40px] overflow-hidden pointer-events-none">
+        <motion.div
+          className="absolute -inset-px opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          style={{
+            background: useMotionTemplate`
+              radial-gradient(
+                650px circle at ${mouseX}px ${mouseY}px,
+                rgba(0, 14, 255, ${plan.highlight ? "0.2" : "0.15"}),
+                transparent 80%
+              )
+            `,
+          }}
+        />
+      </div>
 
       {plan.badge && (
-        <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-white text-brand-blue text-[10px] font-black px-6 py-2 rounded-full uppercase tracking-widest z-20">
+        <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-white text-brand-blue text-[10px] font-black px-6 py-2 rounded-full uppercase tracking-widest z-30 shadow-lg border border-brand-blue/10">
           {plan.badge}
         </div>
       )}
