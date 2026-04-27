@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Play } from "lucide-react";
+import { Play, ArrowRight } from "lucide-react";
 
 const works = [
   { 
@@ -142,14 +142,29 @@ export default function Portfolio() {
         </div>
         
         <div className="mt-24 text-center">
-            <a 
+            <motion.a 
               href="https://f.io/rySJ1SsU" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-block px-8 py-4 glass rounded-full hover:bg-white/10 transition-colors uppercase tracking-[0.2em] text-xs font-bold cursor-pointer"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ 
+                scale: 1.05,
+                backgroundColor: "#1D4ED8", // Bright blue
+                y: -5
+              }}
+              whileTap={{ scale: 0.95 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center gap-3 px-10 py-5 bg-[#000eff] rounded-full text-white uppercase tracking-[0.2em] text-xs font-black cursor-pointer shadow-xl shadow-blue-900/20 transition-all duration-300"
             >
                 View More
-            </a>
+                <motion.div
+                  animate={{ x: [0, 5, 0] }}
+                  transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+                >
+                  <ArrowRight size={16} />
+                </motion.div>
+            </motion.a>
         </div>
       </div>
     </section>
