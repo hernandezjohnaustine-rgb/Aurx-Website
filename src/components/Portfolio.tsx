@@ -64,17 +64,14 @@ export default function Portfolio() {
             }
 
             return (
-              <motion.a
-                href={work.link}
-                target="_blank"
-                rel="noopener noreferrer"
+              <motion.div
                 key={work.title}
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 whileHover="hover"
                 transition={{ delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="group relative h-[300px] sm:h-[400px] md:h-[500px] rounded-2xl md:rounded-3xl overflow-hidden cursor-pointer block"
+                className="group relative h-[300px] sm:h-[400px] md:h-[500px] rounded-2xl md:rounded-3xl overflow-hidden block"
               >
                 {/* Background Media */}
                 <motion.div 
@@ -136,7 +133,7 @@ export default function Portfolio() {
                     </div>
                   </motion.div>
                 </div>
-              </motion.a>
+              </motion.div>
             );
           })}
         </div>
