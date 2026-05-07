@@ -1,10 +1,9 @@
 {
-  "projectId": "gen-lang-client-0833251311",
-  "appId": "1:175133796226:web:5d0fbafae56c0a8565d19b",
-  "apiKey": "AIzaSyDq9IC14CgCtN9yjFJmeraHKpU1Y-_5vNI",
-  "authDomain": "gen-lang-client-0833251311.firebaseapp.com",
-  "firestoreDatabaseId": "ai-studio-cc296903-2d17-4a6f-8813-3f9a80af678f",
-  "storageBucket": "gen-lang-client-0833251311.firebasestorage.app",
-  "messagingSenderId": "175133796226",
+  "projectId": "aurx-frameworks",
+  "appId": "1:77104431722:web:790ed30100b81905ad8013",
+  "apiKey": "AIzaSyAAuJKKi7C2HEHetR8GDfNr9i4I8baSYLM",
+  "authDomain": "aurx-frameworks.firebaseapp.com",
+  "storageBucket": "aurx-frameworks.firebasestorage.app",
+  "messagingSenderId": "77104431722",
   "measurementId": ""
 }
